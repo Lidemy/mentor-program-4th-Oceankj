@@ -130,7 +130,7 @@ Branch
 GitHub
 ---
 > * git repository : 儲存 Git 的空間
-> *  `git push [專案名字] [brench名字]`  把本機的 brench 上傳到 GitHub 
+> *  `git push origin [branch名字]`  把本機的 branch 上傳到 GitHub 
 > *  `git clone [專案的SVN]` 下載到本機
 > * fork 把別人的 git repository 複製到我的Git裡面 
 > * GitHub Pages : 可以在GitHub上預覽自己寫的網站
