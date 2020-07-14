@@ -9,8 +9,13 @@ const options = {
 };
 
 function callback(error, response, body) {
-  if (!error && response.statusCode === 200) {
-    const info = JSON.parse(body);
+  if (!error && response.statusCode === 200 && response.statusCode < 300) {
+    let info = '';
+    try {
+      info = JSON.parse(body);
+    } catch (e) {
+      console.log(e);
+    }
     for (let i = 0; i < info.top.length; i += 1) {
       console.log('---------------------------------------');
       console.log(`${info.top[i].game.name}\n觀看人數：${info.top[i].viewers}`);

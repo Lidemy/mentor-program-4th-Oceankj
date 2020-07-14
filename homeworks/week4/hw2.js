@@ -2,13 +2,20 @@
 const request = require('request');
 
 let data = '';
+
 switch (process.argv[2]) {
   case 'list':
     request.get('https://lidemy-book-store.herokuapp.com/books?_limit=20',
       (error, response, body) => {
-        data = JSON.parse(body);
-        for (let i = 0; i < data.length; i += 1) {
-          console.log(`${data[i].id} ${data[i].name}`);
+        try {
+          data = JSON.parse(body);
+        } catch (e) {
+          console.log(e);
+        }
+        if (response.statusCode >= 200 && response.statusCode < 300) {
+          for (let i = 0; i < data.length; i += 1) {
+            console.log(`${data[i].id} ${data[i].name}`);
+          }
         }
       });
     break;
@@ -16,22 +23,29 @@ switch (process.argv[2]) {
   case 'read':
     request.get(`https://lidemy-book-store.herokuapp.com/books/${process.argv[3]}`,
       (error, response, body) => {
-        data = JSON.parse(body);
-        if (error) {
-          console.log(`錯誤代碼${error}`);
-          return;
+        try {
+          data = JSON.parse(body);
+        } catch (e) {
+          console.log(e);
         }
-        if (data.id === undefined) {
-          console.log('查無此書');
-          return;
+        if (response.statusCode >= 200 && response.statusCode < 300) {
+          if (data.id === undefined) {
+            console.log('查無此書');
+            return;
+          }
+          console.log(`${data.id} ${data.name}`);
         }
-        console.log(`${data.id} ${data.name}`);
       });
     break;
 
   case 'delete':
     request.delete(`https://lidemy-book-store.herokuapp.com/books/${process.argv[3]}`,
       (error, response, body) => {
+        try {
+          data = JSON.parse(body);
+        } catch (e) {
+          console.log(e);
+        }
         console.log(`已刪除 id:${process.argv[3]}`);
       });
     break;
@@ -41,12 +55,18 @@ switch (process.argv[2]) {
       form: { name: process.argv[3] },
     },
     (err, httpResponse, body) => {
+      try {
+        data = JSON.parse(body);
+      } catch (e) {
+        console.log(e);
+      }
     });
     break;
 
   case 'update':
     request.patch(`https://lidemy-book-store.herokuapp.com/books/${process.argv[3]}`).form({ name: process.argv[4] });
     break;
+
   default:
     console.log('請輸入指令');
 }
