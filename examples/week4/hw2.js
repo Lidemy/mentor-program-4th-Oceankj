@@ -1,4 +1,6 @@
+/* eslint-disable */
 const request = require('request');
+
 const args = process.argv;
 const API_ENDPOINT = 'https://lidemy-book-store.herokuapp.com';
 
@@ -83,3 +85,5 @@ function updateBook(id, name) {
     console.log('更新成功！');
   })
 }
+
+/* eslint-enable */
