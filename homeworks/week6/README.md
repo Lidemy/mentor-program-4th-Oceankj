@@ -10,7 +10,7 @@
 
 ![](res3.png)
 
-設計稿：https://app.zeplin.io/project/5eab7fd61be0341bdeed0db0/screen/5eab888623964b1b1214a9d3
+[設計稿：](https://app.zeplin.io/project/5eab7fd61be0341bdeed0db0/screen/5eab888623964b1b1214a9d3)
 
 （目前權限僅供公開給第四期學生，如果第四期學生發現沒有權限請找 @huli）
 
