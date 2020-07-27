@@ -1,0 +1,114 @@
+
+.yellow__bar{
+    height: 8px;
+    background-color:#fad312;
+}
+.background{
+    display: block;
+    background-color:lightgray;
+}
+.wrapper {
+    margin:0px auto;
+    padding:100px;
+}
+.wrapper__inside{
+    padding:54px 0px 35px 39px;
+    background-color:white;
+}
+.title {
+    font-size: 36px;
+    font-weight:bold;
+}
+
+.title p{
+    margin: 0px;
+    padding: 0px;
+}
+
+.brief{
+    margin-top:35px;
+}
+
+.brief .brief__info{
+    font-size:13px;
+    color:black;
+    line-height: 2.3em;
+}
+.brief .brief__info + p{
+   margin-bottom:46px;
+}
+.brief__notice{
+    font-size:15px;
+    color:#e74149;
+}
+.question__text div{
+    display:flex;
+    line-height: 1;
+}
+.question__text div p{
+    margin-top: 0px;
+}
+.question__text div p+p{
+    margin-left: 3px;
+}
+.question__text ~ .question__text{
+    margin-top:36px;
+}
+.question__option div{
+    display: flex;
+    margin-bottom: 0px;
+    margin-top: 36px;
+}
+.question__option div p{
+   margin:0px;
+}
+.option input{
+    margin-top: 23px;
+}
+.question {
+    font-size: 20px;
+}
+.question__other{
+    color:#000000;
+    margin-top:40px;
+}
+.question__other p + p{
+    font-size:14px;
+}
+.submit input{
+    padding: 13px 30px;
+    border-radius:3px;
+    background-color: #fad312;
+    border-color: initial;
+    border-style: none;
+}
+.submit {
+    margin-top:55px;
+}
+.submit + div{
+    margin-top:21px;
+}
+footer{
+    color:#999999;
+    font-size:13px;
+    background-color:black;
+    height: 49px;
+}
+footer p {
+    padding: 18px ;
+    margin:0px auto;
+    text-align: center;
+}
+@media(max-width:768px){
+    .wrapper {
+        padding:20px;
+    }
+    .title {
+        font-size: 40px;
+        font-weight:bold;
+    }
+    .wrapper__inside{
+        padding:20px;
+        background-color:white;
+    }
+}
