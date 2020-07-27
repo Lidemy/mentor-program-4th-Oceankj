@@ -21,6 +21,16 @@
 
 *  content : 內文
 
+---
+
+
+``` css
+* {
+  box-sizing: border-box;
+}
+```
+使用 box-sizing 會自動將 margin、border、padding 、content 包含在你所設定的高與寬內，是較為直覺的寫法。
+
 ## 請問 display: inline, block 跟 inline-block 的差別是什麼？
 
 [參考資料](https://medium.com/@wendy199288/css%E6%95%99%E5%AD%B8-%E9%97%9C%E6%96%BCdisplay-inline-inline-block-block%E7%9A%84%E5%B7%AE%E5%88%A5-1034f38eda82)
