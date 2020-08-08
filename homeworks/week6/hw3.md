@@ -1,5 +1,69 @@
 ## 請找出三個課程裡面沒提到的 HTML 標籤並一一說明作用。
+* 音樂播放器
 
+```
+<embed></embed>
+```
+| |屬性|   |   |屬性|
+|----|-----|----|----|----|
+|src|音樂檔路徑| |ShowPositionControls|顯示快轉與倒帶|
+|align|對齊方式| |ShowTracke|顯示播放進度|
+|autostar|自動播放| |ShowAudioControl|顯示音量控制器|
+|width|寬度| |ShowStatusBar|顯示資訊狀態列|
+|height|高度| |ShowDisplay|顯示資訊狀態|
+|loop|重複播放
+
+EX  :  
+```
+embed src="img/music.mp3" align="botton" autostart="fasle"></embed>
+```
+
+---
+
+* 文字區域
+```
+<textarea></textarea>
+```
+
+| |屬性|   |   |屬性|
+|----|-----|----|----|----|
+|name|名稱(可重複)| |disabled|沒有作用|
+|id|名稱(不可重複)| |readonly|不能操作|
+|cols|行數| |Swrap|換行 |
+|rows|列數| |||
+
+EX  :  
+```
+<textarea name="read" cols="10" rows="3" disabled>value</textarea>
+```
+
+---
+
+* 表格
+
+```
+<th></th>
+<td></td>
+```
+|     | 屬性|
+|---|---|
+|align|水平對齊方式|
+|valign|垂直對齊方式|
+|bgcolor|背景顏色|
+|background|背景圖片|
+|bordercolor|框線顏色|
+|width|寬度|
+|height|高度|
+|rowspan|儲存格下跨N個列|
+|colspa|儲存格橫跨N個欄|
+
+EX  :  
+
+```
+<table><tr><th align="center">文字1</th>
+<th valign="middle">文字2</th></tr></table>
+```
+ [參考資料](http://web.thu.edu.tw/hzed/www/tag.htm)
 
 ## 請問什麼是盒模型（box modal）
 
