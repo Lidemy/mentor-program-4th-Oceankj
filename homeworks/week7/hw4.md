@@ -21,9 +21,9 @@
 ## event.preventDefault() 跟 event.stopPropagation() 差在哪裡，可以舉個範例嗎？
 
 
-event.stopPropagation()：阻止事件傳遞，只是阻止指令傳遞，所以不存在在冒泡階段使用，則指令仍會感生作用，若在補獲階段就阻止其傳遞，則該事件仍不會發生的情況
+event.stopPropagation()：阻止事件傳遞，只是阻止指令傳遞，所以不存在在冒泡階段使用，則指令仍會感生作用，若在補獲階段就阻止其傳遞，則該事件仍不會發生的情況 (EX:第一組div)
 
-event.preventDefault() ：阻止預設行為，不影響指令的傳遞，但不會阻止事件傳遞
+event.preventDefault() ：阻止預設行為，不影響指令的傳遞，但不會阻止事件傳遞 (EX:第二組div)
 
 ---
 HTML
