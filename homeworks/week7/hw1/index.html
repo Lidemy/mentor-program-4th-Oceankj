@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>HW2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <link rel="stylesheet" type="text/css" href="./style.css">
+  </head>
+  <body>
+    <div class="background">
+     <section class="wrapper">
+      <div class="yellow__bar"></div>
+        <div class="wrapper__inside">
+            <div class="title">
+                <p>新拖延運動報名表單</p>
+            </div>
+            <div class="brief">
+                <p class="brief__info">
+                活動日期：2020/12/10 ~ 2020/12/11
+                <br>
+                活動地點：台北市大安區新生南路二段1號
+                </p>
+                <p class="brief__notice">
+                    *必填
+                </p>
+            </div>
+            <div class="question__text required">
+                <div>
+                    <p class="question">暱稱</p>
+                    <p class="brief__notice">*</p>
+                </div>
+                <form>
+                    <input type="text" name="nickname" placeholder="您的回答">
+                </form>
+                <p class="question__text--notice">暱稱為必填</p>
+            </div>
+            <div class="question__text required">
+                <div>
+                    <p class="question">電子郵件</p>
+                    <p class="brief__notice">*</p>
+                </div>
+                <form>
+                    <input type="text" name="email" placeholder="您的電子郵件">
+                </form>
+                <p class="question__text--notice">電子郵件為必填</p>
+            </div>
+            <div class="question__text required">
+                <div>
+                    <p class="question">手機號碼</p>
+                    <p class="brief__notice">*</p>
+                </div>
+                <form>
+                    <input type="text" name="phone" placeholder="您的手機號碼">
+                </form>
+                <p class="question__text--notice">手機號碼為必填</p>
+            </div>
+            <div class="question__option required">
+                <div>
+                    <p class="question">報名類型</p>
+                    <p class="brief__notice">*</p>
+                </div>
+                <form>
+                    <label class="option">
+                        <input type="radio" name="option" value="1"> 躺在床上用想像力實作
+                    </label>
+                    <br>
+                    <br>
+                    <label>
+                        <input type="radio" name="option" value="2">  趴在地上滑手機找現成的
+                    </label>
+                </form>
+                <p class="question__text--notice">報名類型為必填</p>
+            </div>
+            <div class="question__text required">
+                <div>
+                    <p class="question">怎麼知道這個活動的？</p>
+                    <p class="brief__notice">*</p>
+                </div>
+                <form>
+                    <input type="text" name="reason" placeholder="您的回答">
+                </form>
+                <p class="question__text--notice">怎麼知道這個活動的為必填</p>
+            </div>
+            <div class="question__other required">
+                <div>
+                    <p class="question">其他</p>
+                    <p >對活動的一些建議</p>
+                </div>
+                <form>
+                    <input type="text" name="other" placeholder="您的回答">
+                </form >
+                <form class="submit" target = "nm_iframe">
+                    <input type="submit" placeholder="提交"/>
+                </form>
+                <div>請勿透過表單送出您的密碼。</div>
+            </div>
+        </div>
+      </div>
+      <footer>
+        <p>© 2020 © Copyright. All rights Reserved.</p>
+      </footer>
+    </section> 
+    <iframe  name="nm_iframe" style="display:none;"></iframe>
+  </body>
+  <script type="text/javascript" src="./set.js"> </script>
+</html>
