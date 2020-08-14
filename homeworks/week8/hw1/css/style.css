@@ -1,0 +1,165 @@
+body {
+  margin: 0px; }
+
+.wrapper {
+  max-width: 810px;
+  margin: 0px auto;
+  padding: 0px 50px; }
+
+.navbar {
+  box-shadow: -1.4px -1.4px 6px 0 #97a2a0; }
+  .navbar__side-name {
+    color: #489846;
+    width: 200px;
+    font-size: 36px; }
+  .navbar .wrapper {
+    display: flex;
+    justify-content: space-between;
+    height: 84px;
+    align-items: center;
+    background: white;
+    padding: 0px 20px; }
+  .navbar__list {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    font-size: 18px; }
+    .navbar__list a {
+      color: black; }
+    .navbar__list li {
+      margin-left: 12px;
+      border-radius: 8px;
+      transition: background 0.1s; }
+      .navbar__list li a {
+        display: block;
+        text-decoration: none;
+        padding: 12px 24px; }
+        .navbar__list li a :hover {
+          text-decoration: none;
+          color: white;
+          border-radius: 8px;
+          transition: all 0.2s; }
+      .navbar__list li :hover {
+        background: #ff7286;
+        border-radius: 8px;
+        color: white;
+        transition: all 0.2s; }
+    .navbar__list--active {
+      background: #ff7286; }
+      .navbar__list--active a {
+        text-decoration: none;
+        color: white; }
+
+.contain {
+  background-image: url(../games-bn.png);
+  background-size: cover;
+  background-position: center;
+  height: 1000px;
+  width: 100%; }
+  .contain__transparency {
+    background-color: rgba(255, 255, 255, 0.5);
+    height: 1000px; }
+    .contain__transparency::before {
+      content: '';
+      display: block;
+      height: 55px;
+      visibility: hidden; }
+  .contain__wrapper {
+    max-width: 500px;
+    height: 560px;
+    margin: 0px auto auto auto;
+    border-radius: 16px;
+    background-color: white; }
+    .contain__wrapper__inside {
+      margin: auto 60px; }
+      .contain__wrapper__inside__title {
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+        color: #5ec1b6; }
+      .contain__wrapper__inside__text {
+        display: flex;
+        width: 100%;
+        margin-top: 19px;
+        line-height: 1.5em;
+        border-bottom: solid 1px #cdcdcd; }
+        .contain__wrapper__inside__text__subtitle {
+          flex: 1;
+          font-weight: bold; }
+        .contain__wrapper__inside__text p {
+          flex: 3;
+          margin-block-start: 0em; }
+      .contain__wrapper__inside__button {
+        display: flex;
+        margin-top: 36px; }
+        .contain__wrapper__inside__button input {
+          margin: 0px auto;
+          width: 400px;
+          height: 55px;
+          border-radius: 8px;
+          border-color: transparent;
+          background-color: #e62a45;
+          color: white;
+          cursor: pointer; }
+          .contain__wrapper__inside__button input:hover {
+            background-color: #ff7286;
+            transition: all 0.2s; }
+      .contain__wrapper__inside::before {
+        content: '';
+        display: block;
+        height: 40px;
+        visibility: hidden; }
+
+.prize {
+  color: black;
+  font-size: 36px; }
+
+.prize__wrapper {
+  text-align: center;
+  max-width: 800px;
+  background-color: rgba(0, 0, 0, 0); }
+
+.footer__info {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 100px;
+  background-color: #e8efee; }
+  .footer__info__left {
+    font-size: 14px;
+    color: #484848;
+    line-height: 2em; }
+.footer__sitename {
+  color: #489846;
+  font-size: 36px; }
+.footer__social {
+  font-size: 14px;
+  color: #484848; }
+.footer__button {
+  background-color: #35564b;
+  text-align: center;
+  padding: 15px;
+  color: white; }
+
+@media (max-width: 768px) {
+  .navbar .wrapper {
+    flex-direction: column;
+    height: 120px;
+    justify-content: space-around;
+    padding: 0px; }
+  .navbar__button {
+    background-color: #35564b;
+    text-align: center;
+    padding: 15px;
+    color: white; }
+  .navbar__list li {
+    flex: 1;
+    margin-left: 0px;
+    border-radius: 0px; }
+    .navbar__list li a {
+      text-align: center; }
+
+  .footer__info {
+    flex-direction: column-reverse; } }
+
+/*# sourceMappingURL=style.css.map */

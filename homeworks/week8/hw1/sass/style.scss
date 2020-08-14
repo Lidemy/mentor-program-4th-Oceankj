@@ -1,0 +1,202 @@
+$btnColor:#ff7286;
+  body{
+      margin:0px;
+  }
+  .wrapper{
+    max-width:810px;
+    margin:0px auto;
+    padding:0px 50px;
+  }
+  .navbar{
+    box-shadow: -1.4px -1.4px 6px 0 #97a2a0;
+    &__side-name{
+      color: #489846;
+      width: 200px;
+      font-size: 36px;
+    }
+    .wrapper{
+      display: flex;
+      justify-content: space-between;
+      height: 84px;
+      align-items:center;
+      background:white;
+      padding:0px 20px;
+    }
+    &__list{
+      list-style: none;
+      padding: 0px;
+      margin: 0px;
+      display:flex;
+      font-size:18px;
+      a {
+        color:black;
+      }
+      li{
+        margin-left:12px;
+        border-radius:8px;
+        transition: background 0.1s;
+        a {
+          display:block;
+          text-decoration:none;
+          padding:12px 24px;
+          :hover{
+            text-decoration:none;
+            color:white;
+            border-radius: 8px;
+            transition: all 0.2s;
+          }
+        }
+        :hover{
+          background:$btnColor;
+          border-radius: 8px;
+          color:white;
+          transition: all 0.2s;
+        }
+      }
+      &--active{
+        background:$btnColor;
+        a{
+          text-decoration:none;
+          color:white;
+        }
+      }
+    }
+  }
+  .contain{
+    background-image:url(../games-bn.png);
+    background-size: cover;
+    background-position: center;
+    height: 1000px;
+    width: 100%;
+    &__transparency{
+      background-color: rgba(256,256,256,0.5);
+      height: 1000px;
+      &::before{
+        content:'';
+        display:block;
+        height: 55px;
+        visibility:hidden;
+      }
+    }
+    &__wrapper{
+      max-width: 500px;
+      height: 560px;
+      margin: 0px auto auto auto;
+      border-radius: 16px;
+      background-color:white;
+      &__inside{
+        margin: auto 60px;
+        &__title{
+          font-size: 20px;
+          font-weight: bold;
+          text-align: center;
+          color:#5ec1b6;
+        }
+        &__text{
+          display: flex;
+          width:100%;
+          margin-top:19px;
+          line-height: 1.5em;
+          border-bottom:solid 1px #cdcdcd;
+          &__subtitle{
+            flex:1;
+            font-weight:bold;
+          }
+          p{
+            flex:3;
+            margin-block-start: 0em;
+          }
+        }
+        &__button{
+          display: flex;
+          margin-top:36px;
+          input{
+            margin: 0px auto;
+            width: 400px;
+            height: 55px;
+            border-radius: 8px;
+            border-color: transparent;
+            background-color: #e62a45;
+            color: white;
+            cursor :pointer;
+            &:hover{
+              background-color: #ff7286;
+              transition: all 0.2s;
+            }
+          }
+        }
+        &::before{
+          content:'';
+          display:block;
+          height: 40px;
+          visibility:hidden;
+        }
+      }
+    }
+  }
+  .prize{
+    color: black;
+    font-size:36px;
+  }
+  .prize__wrapper{
+    text-align: center;
+    max-width: 800px;
+    background-color:rgba(0,0,0,0);
+  }
+  .footer{
+    &__info{
+      display:flex;
+      justify-content:space-between;
+      padding: 40px 100px;
+      background-color:#e8efee;
+      &__left{
+        font-size: 14px;
+        color: #484848;
+        line-height:2em;
+        }
+      }
+    &__sitename{
+      color: #489846;
+      font-size:36px;
+    }
+    &__social{
+      font-size: 14px;
+      color: #484848;
+      }
+    &__button{
+      background-color: #35564b;
+      text-align: center;
+      padding:15px;
+      color:white;
+    }
+  }
+
+  @media(max-width:768px){
+    .navbar{
+      .wrapper{
+      flex-direction:column;
+      height:120px;
+      justify-content:space-around;
+      padding:0px;
+      }
+      &__button{
+      background-color: #35564b;
+      text-align: center;
+      padding:15px;
+      color:white;
+      }
+      &__list{
+        li{
+          flex:1;
+          margin-left: 0px;
+          border-radius:0px;
+          a{
+            text-align: center;
+            }
+        }
+      }
+    }
+    .footer__info{
+      flex-direction:column-reverse;
+    }
+  }
