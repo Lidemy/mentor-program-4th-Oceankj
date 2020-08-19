@@ -1,16 +1,23 @@
 body {
   background-color: #191b21; }
+  body footer {
+    background-color: rgba(83, 77, 77, 0.5);
+    color: #bfbcbc;
+    text-align: center;
+    padding: 10px;
+    margin: 0px; }
 
 .wrapper {
   background-image: url(https://cdn2.techbang.com/system/images/538180/original/5232c94faffe832a3a542c419fa2e1f9.jpg?1574925615);
   background-size: auto;
+  background-repeat: round;
   max-width: 1000px;
   margin: 10px auto;
   border-radius: 10px; }
 
 .navbar {
   display: flex;
-  height: 76px;
+  height: auto;
   background-color: rgba(203, 199, 199, 0.556);
   justify-content: space-between;
   border-radius: 6px; }
@@ -46,6 +53,14 @@ body {
       transition-duration: 1s; }
       .content__wrapper :hover .streamer__card__info__txt__title {
         white-space: normal; }
+
+.card__empty {
+  display: inline-block;
+  position: relative;
+  vertical-align: top;
+  height: 300px;
+  width: 290px;
+  margin: auto; }
 
 .streamer__card {
   display: inline-block;

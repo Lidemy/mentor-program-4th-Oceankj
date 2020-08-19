@@ -23,7 +23,7 @@ const getStreamer = () => {
       div.addEventListener('click', () => {
         window.open(`${steamerData.streams[n].channel.url}`);
       });
-      content.appendChild(div);
+      content.insertBefore(div, document.querySelector('.card__empty'));
     }
   };
   request.send();
@@ -44,7 +44,7 @@ const getGame = () => {
         navGames.appendChild(div);
         div.addEventListener('click', (e) => {
           gameFocused.innerText = `${e.target.innerText}`;
-          content.innerHTML = ' ';
+          content.innerHTML = '<div class = "card__empty"></div><div class = "card__empty"></div>';
           getStreamer();
         });
       }
