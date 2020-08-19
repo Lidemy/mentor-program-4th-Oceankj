@@ -1,3 +1,104 @@
+body {
+  background-color: #191b21; }
 
+.wrapper {
+  background-image: url(https://cdn2.techbang.com/system/images/538180/original/5232c94faffe832a3a542c419fa2e1f9.jpg?1574925615);
+  background-size: auto;
+  max-width: 1000px;
+  margin: 10px auto;
+  border-radius: 10px; }
+
+.navbar {
+  display: flex;
+  height: 76px;
+  background-color: rgba(203, 199, 199, 0.556);
+  justify-content: space-between;
+  border-radius: 6px; }
+  .navbar p {
+    padding-left: 20px;
+    font-size: 24px;
+    color: #f0efef; }
+  .navbar__btn {
+    display: flex;
+    align-self: center;
+    padding-right: 20px;
+    cursor: pointer; }
+    .navbar__btn :hover {
+      background-color: #3f3c3c;
+      color: white; }
+    .navbar__btn div {
+      color: white;
+      padding: 8px;
+      border-radius: 5px; }
+
+.content {
+  text-align: center; }
+  .content__title {
+    color: white; }
+    .content__title__gamename {
+      font-size: 20px; }
+  .content__wrapper {
+    max-width: 900px;
+    margin: 0px auto;
+    padding-bottom: 60px;
+    display: inline-block; }
+    .content__wrapper :hover .streamer__card {
+      transition-duration: 1s; }
+      .content__wrapper :hover .streamer__card__info__txt__title {
+        white-space: normal; }
+
+.streamer__card {
+  display: inline-block;
+  position: relative;
+  vertical-align: top;
+  height: 300px;
+  width: 290px;
+  margin: auto;
+  transition: all 1s ease-out;
+  cursor: pointer; }
+  .streamer__card__pic {
+    margin: 2.5px;
+    height: 225px;
+    border-radius: 5px;
+    background-color: white;
+    background-size: cover; }
+  .streamer__card__info {
+    display: flex;
+    position: relative;
+    z-index: 2;
+    margin: 2.5px;
+    min-height: 70px;
+    border-radius: 5px;
+    background-color: #292828; }
+    .streamer__card__info__icon {
+      width: 70px;
+      height: 70px;
+      margin: 3px;
+      background-image: url("https://img.favpng.com/7/5/25/twitch-computer-icons-streaming-media-youtube-livestream-png-favpng-EbtuzZU17JqQHsd7ia8B58AmA.jpg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      border-radius: 50%; }
+    .streamer__card__info__txt {
+      width: 205px;
+      margin: auto 5px;
+      padding-bottom: 8px;
+      color: white; }
+      .streamer__card__info__txt__title {
+        width: 180px;
+        margin-right: 5px;
+        margin-top: 13px;
+        font-size: 17px;
+        display: inline-block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; }
+      .streamer__card__info__txt__id {
+        margin-top: 7px;
+        font-size: 13px; }
+
+@media (max-width: 768px) {
+  .navbar {
+    display: block; } }
 
 /*# sourceMappingURL=style.css.map */
