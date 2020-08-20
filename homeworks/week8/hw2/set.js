@@ -29,7 +29,7 @@ const getStreamer = () => {
   request.send();
 };
 
-const getGame = () => {
+const getGame = (cb) => {
   const request = new XMLHttpRequest();
   request.open('GET', 'https://api.twitch.tv/kraken/games/top?limit=5', false);
   request.setRequestHeader('Client-ID', '4ntksaugli5t9qgqi5krd8u4px6398');
@@ -50,9 +50,9 @@ const getGame = () => {
       }
       gameFocused.innerText = `${gamesName[0].game.name}`;
     }
+    cb();
   };
   request.send();
 };
 
-getGame();
-getStreamer();
+getGame(getStreamer);
