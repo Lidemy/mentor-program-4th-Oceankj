@@ -216,10 +216,6 @@ footer {
     border: solid 1px #457B9D;
     color: #457B9D; }
 
-.list__box {
-  display: inline-block;
-  margin-top: 13px; }
-
 .category__box {
   height: auto;
   text-align: center; }
