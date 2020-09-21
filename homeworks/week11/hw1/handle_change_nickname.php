@@ -1,5 +1,10 @@
 <?php
 require_once('./conn.php');
+session_start();
+if(empty($_SESSION['username'])) {
+  header('Location:index.php');
+  exit();
+};
   $newname = $_POST['nickname'];
   $username = $_POST['username'];
   if(empty($newname)) {

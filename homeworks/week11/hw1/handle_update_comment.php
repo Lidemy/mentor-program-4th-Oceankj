@@ -5,6 +5,10 @@
     header('Location:./update_comment.php?errorCode=1');
     exit();
   };
+  if(empty($_SESSION['username'])) {
+    header('Location:index.php');
+    exit();
+  };
   $username = $_SESSION['username'];
   $comment = $_POST['comment'];
   $id = $_GET['id'];
