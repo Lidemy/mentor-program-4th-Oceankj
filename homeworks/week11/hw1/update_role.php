@@ -1,7 +1,3 @@
-<?php
-  require_once("./conn.php");
-  session_start();
-?>
 <!DOCTYPE HTML>
 <html>
   <head>
@@ -10,6 +6,21 @@
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
     <link rel="stylesheet" type="text/css" href="./style.css">
   </head>
+  <?php
+  require_once("./conn.php");
+  session_start();
+  $username = $_SESSION["username"];
+  $sql = "SELECT role_id FROM oceankj_w11_roles WHERE username = ?";
+  $stmt = $conn->prepare($sql);
+  $stmt->bind_param("s",$username);
+  $result = $stmt->execute();
+  $result = $stmt->get_result();
+  $row = $result->fetch_assoc();
+  if((int)$row["role_id"] !== 1){
+    header("Location:./index.php");
+    exit();
+  };
+?>
   <body>
     <header class="header">注意！本網站為練習用網站 ，刻意忽略資安的實作，註冊時請勿使用真實的帳號及密碼</header>
     <main>
