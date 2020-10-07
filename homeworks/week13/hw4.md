@@ -21,12 +21,11 @@ gulp是任務管理器 ; webpack是打包工具。
 
 ## CSS Selector 權重的計算方式為何？
 
-
 `id` > `class` > 標籤 
 
 越細項的贏
 
-![權重](./pic2.pg)
+![權重](./pic2.png)
 
 * InLineStyle大於上述的分類
-* `!important` 
+* `!important` 最大只有`!important`可以超過`!important`
