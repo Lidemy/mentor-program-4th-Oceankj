@@ -1,4 +1,5 @@
 <?php
+  header("Access-Control-Allow-Origin: *");
   require_once("./conn.php");
   $page = 1;
   $site_key = "jim";
