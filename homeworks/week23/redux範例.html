@@ -1,0 +1,268 @@
+/* eslint-disable */
+const { createStore } = require("redux");
+
+//////////基本用法/////////
+
+const initialState = {
+  value: 0,
+};
+
+function counterReducer(state = initialState, action) {
+  //傳入state，給一個初始值
+  switch (action.type) {
+    case "plus":
+      return {
+        valeu: state.value + 1,
+      };
+    case "minus":
+      return {
+        valeu: state.value - 1,
+      };
+    default:
+      return state;
+  }
+}
+
+let store = createStore(counterReducer);
+
+//訂閱store,當 store 改變之後做的事
+//拿現在的 state,store.getState())
+store.subscribe(() => {
+  console.log("changed!", store.getState());
+});
+
+//dispatch 內寫要做的事
+store.dispatch({
+  type: "plus",
+});
+
+store.dispatch({
+  type: "minus",
+});
+
+////////////////應用在 todo 上//////////////////////////
+
+let todoId = 0;
+
+const initialState = {
+  email: "12345@mail.com",
+  todos: [],
+};
+
+//不能 call API ??
+function counterReducer(state = initialState, action) {
+  switch (action.type) {
+    case "add_todo": {
+      return {
+        ...state,
+        todos: [
+          ...state.todos,
+          {
+            id: todoId++,
+            name: action.payload.name,
+          },
+        ],
+      };
+    }
+    case "delete_todo": {
+      return {
+        ...state,
+        todos: state.todos.filter((todo) => todo.id !== action.paload.id),
+      };
+    }
+    default:
+      return state;
+  }
+}
+
+//redux 有內建 function 可以傳多個 reducer 進去
+let store = createStore(counterReducer);
+
+//訂閱store,當 store 改變之後做的事
+//拿現在的 state,store.getState())
+store.subscribe(() => {
+  console.log("changed!", store.getState());
+});
+
+//action constance 方便做錯誤處理
+const ActionType = {
+  ADD_TODO: "add_todo",
+  DELETE_TODO: "delete_todo",
+};
+
+//action creater 把要做的動作規格化
+function addTodo(name) {
+  return {
+    type: ActionType.ADD_TODO,
+    payload: {
+      name,
+    },
+  };
+}
+
+function deleteTodo(id) {
+  return {
+    type: ActionType.DELETE_TODO,
+    payload: {
+      id,
+    },
+  };
+}
+
+store.dispatch(addTodo("建立一個新的todo"));
+store.dispatch(deleteTodo(0)); //刪除 id 為 0 的 todo
+
+///小測試
+except(
+  counterReducer(initialState, {
+    type: "add_todo",
+    payload: {
+      name: "123",
+    },
+  })
+).toEqual({
+  todos: [{ name: "123" }],
+});
+
+///需要引入到 react 的時候可以在 index.js 的檔案裡 creatStore，並於 App 中傳入一個叫做store 的 props
+///也可以用直接用官方的 react-redux 套件，來把react 和 redux 套用在一起呵呵
+
+//////////react-redux////////////
+
+//新建資料夾 redux ，包含{ reducers(資料夾){todos.js, index.js}, actionTyps.js, action.js, store.js, selector.js }
+
+/////////////////////store.js/////////////////////
+import { creatStore } from "redux";
+import rootReducer from "./reducers";
+
+export default creatStore(rootReducer);
+
+///////////actionType.js (action constance)//////////
+export const ADD_TODO = "add_todo";
+export const DELETE_TODO = "delete_todo";
+
+////////////actions.js (action creater)///////////////
+import { ADD_TODO, DELETE_TODO } from "./actionType";
+
+export function addTodo(name) {
+  return {
+    type: ADD_TODO,
+    payload: {
+      name,
+    },
+  };
+}
+
+export function deleteTodo(id) {
+  return {
+    type: DELETE_TODO,
+    payload: {
+      id,
+    },
+  };
+}
+
+///////////todos.js (reducer)//////////////
+import { ADD_TODO, DELETE_TODO } from "../actionTypes";
+
+let todoId = 0;
+
+const initialState = {
+  todos: [],
+};
+
+export default function todoReducer(state = initialState, action) {
+  switch (action.type) {
+    case ADD_TODO: {
+      return {
+        ...state,
+        todos: [
+          ...state.todos,
+          {
+            id: todoId++,
+            name: action.payload.name,
+          },
+        ],
+      };
+    }
+    case DELETE_TODO: {
+      return {
+        ...state,
+        todos: state.todos.filter((todo) => todo.id !== action.paload.id),
+      };
+    }
+    default:
+      return state;
+  }
+}
+
+/////////reducers 裡面的 index.js(當有很多 reducer 的時候效果比較明顯)/////////
+import { combineReducers } from "redux";
+import todos from "./todos";
+
+export default combineReducers({
+  todoState: todos,
+  //可以加入其他 reducer
+});
+
+//////////index.js 最外面資料夾//////////
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App.js";
+import reportWebVitals from "./reportWebVitals";
+import { Provider } from "react-redux"; //重點
+import store from "./redux/store"; //重點
+
+React.render(
+  <Provider store={store}>
+    <App />
+  </Provider>
+);
+//把 store 當作 props 傳進去
+reportWebVitals();
+
+/////////App.js/////////
+import { useSelector } from "react-redux";
+
+function App() {
+  //只選出我要用的 Reducer
+  //也可以把 selector 移到另外一個檔案
+  const state = useSelector((store) => store.todoState.todos);
+
+  return <div>123</div>;
+}
+
+export default App;
+
+/////////selector.js/////////
+export const selectTodos = (store) => store.todoState.todos;
+
+//App.js 改成
+import { useSelector, useDispatch } from "react-redux";
+import { selectTodos } from "./redux/selector";
+import { addTodo } from "./redux/actions";
+
+function App() {
+  const todos = useSelector(selectTodos);
+  const dispatch = useDispatch();
+  return (
+    <div>
+      <button
+        onClick={() => {
+          dispatch(addTodo());
+        }}
+      >
+        add todo
+      </button>
+      <ul>
+        {todos.map((todo) => (
+          <li>
+            {todo.id} {todo.name}
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default App;
