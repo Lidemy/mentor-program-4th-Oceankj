@@ -24,6 +24,9 @@ function HomePage() {
 
   useEffect(() => {
     dispatch(getPosts());
+  }, [dispatch]);
+
+  useEffect(() => {
     if (posts) {
       const limitPerPage = 10;
       let ItemToPush = (currentPage - 1) * 10;
@@ -35,7 +38,7 @@ function HomePage() {
       }
       setListOfArticle(list);
     }
-  }, [currentPage, posts, dispatch]);
+  }, [currentPage, posts]);
 
   const handleChangePage = (page) => {
     setCurrentPage(page.target.innerText);
